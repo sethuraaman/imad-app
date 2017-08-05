@@ -25,7 +25,7 @@ var articles = {
             </p>`
     },
     'article-Three': {
-        title: ' Article Three by Sethuraaman',
+        title: 'Article Three by Sethuraaman',
         heading: 'ARTICLE THREE',
         date: '05 AUG 2017;1900',
         content: `
@@ -37,10 +37,10 @@ var articles = {
 };
 
 function createTemplate (data) {
-    var title = data.title ;
-    var date = data.date ;
-    var heading = data.heading ;
-    var content = data.content ;
+    var title = data.title;
+    var date = data.date;
+    var heading = data.heading;
+    var content = data.content;
     
      var htmlTemplate = `
     <html>
