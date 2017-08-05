@@ -52,7 +52,7 @@ function createTemplate (data) {
             </div>
         </body>
     </html>
-    `
+    `;
     return htmlTamplate;
 }
 app.get('/', function (req, res) {
