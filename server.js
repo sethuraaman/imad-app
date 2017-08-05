@@ -5,28 +5,62 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var content = {
+var articleone = {
     title: 'Article one Imad Sethu18rr',
     heading: 'Article One',
-    date:'05.08.2017'
-    content: ` 
-            <P>
-                THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE.
-            </P>
-            <P>
-                THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE.
-            </P>
-            <P>
-                THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE.
-            </P>`
+    date:'05.08.2017',
+    content:` 
+        <P>
+            THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE.
+        </P>
+        <P>
+            THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE.
+        </P>
+        <P>
+            THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE.
+        </P>`
 };
 
+function createtemplate(data) {
+    var title =data.title;
+    var date= data.date;
+    var heading= data.heading;
+    var content= data.content;
+
+    var htmltamplate =`
+    <html>
+        <head>
+            <title>
+                ${title}
+            </title>
+            <meta name="viewport" content="width=device-width, intial-scale=1">
+            <link href="/ui/style.css" rel="stylesheet">
+        </head>
+        <body>
+            <div class="container">
+                <div>
+                    <a href="/">HOME</a>
+                </div>
+                <hr/>
+                <h3> ${heading} </h3>
+                <DIV>
+                    ${date}
+                </DIV>
+                <DIV>
+                    ${content}
+                </DIV>
+            </div>
+        </body>
+    </html>
+    `
+    return htmltamplate;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'Article-one.html'));
+  res.send(createtamplate(articleone));
 });
 
 app.get('/article-two', function (req, res) {
