@@ -53,9 +53,7 @@ function createTemplate (data) {
     <html>
         <head>
             <title>
-                <h1>
                 ${title}
-                </h1>
             </title>
             <meta name="veiwport" content= "width=device-width" intial-scale=1>
             <link href="/ui/style.css" rel="stylesheet" />
