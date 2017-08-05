@@ -18,16 +18,16 @@ var articleone = {
         </P>
         <P>
             THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE.
-        </P>`
+        </P>`,
 };
 
 function createTemplate (data) {
-    var title =data.title;
-    var date= data.date;
-    var heading= data.heading;
-    var content= data.content;
+    var title = data.title;
+    var date = data.date;
+    var heading = data.heading;
+    var content = data.content;
 
-    var htmlTamplate =`
+    var htmlTamplate = `
     <html>
         <head>
             <title>
@@ -42,7 +42,9 @@ function createTemplate (data) {
                     <a href="/">HOME</a>
                 </div>
                 <hr/>
-                <h3> ${heading} </h3>
+                <h3>
+                    ${heading} 
+                </h3>
                 <DIV>
                     ${date}
                 </DIV>
