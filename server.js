@@ -8,8 +8,8 @@ app.use(morgan('combined'));
 var articles = {
     'article-one': {
         title: 'Article One by Sethuraaman',
-        date: '05 AUG 2017;1700',
         heading: 'ARTICLE ONE',
+        date: '05 AUG 2017;1700',
         content: `
         <p>
             this is my first web which i was tring it my own
@@ -17,9 +17,9 @@ var articles = {
         `,
     },
     'article-Two': {
-        title: 'Article One by Sethuraaman',
-        date: '05 AUG 2017;1600',
+        title: 'Article Two by Sethuraaman',
         heading: 'ARTICLE TWO',
+        date: '05 AUG 2017;1800',
         content: `
             <p
                 Iam Trying my Best to Do It
@@ -27,9 +27,9 @@ var articles = {
             `
     },
     'article-Three': {
-        title: ' Article One by Sethuraaman',
-        date: '05 AUG 2017;1800',
+        title: ' Article Three by Sethuraaman',
         heading: 'ARTICLE THREE',
+        date: '05 AUG 2017;1900',
         content: `
         <p>
             It Might Be The Correct One
@@ -46,37 +46,37 @@ function createTemplate (data) {
     var content = data.content;
     
      var htmlTemplate = `
-        <html>
-            <head>
-                <title>
-                    <h1>
-                    ${title}
-                    </h1>
-                </title>
-                <meta name='veiwport' content= 'width=device-width' intial-scale=1>
-                <link href="/ui/style.css" rel="stylesheet" />
-            </head>
-            <body>
-                <div class="container">
-                    <a href="/"><H1>HOME</H1></a>
-                </div>
-                <hr/>
-                <div>
-                    <h3>
-                    ${heading}
-                    </h3>
-                </div>
-                <div>
-                    ${date}
-                </div>
-                <div>
-                    <h2>
-                    ${content}
-                    </h2>
-                </div>
-            </body>
-        </html>
-        `;
+    <html>
+        <head>
+            <title>
+                <h1>
+                ${title}
+                </h1>
+            </title>
+            <meta name='veiwport' content= 'width=device-width' intial-scale=1>
+            <link href="/ui/style.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="container">
+                <a href="/"><H1>HOME</H1></a>
+            </div>
+            <hr/>
+            <div>
+                <h3>
+                ${heading}
+                </h3>
+            </div>
+            <div>
+                ${date}
+            </div>
+            <div>
+                <h2>
+                ${content}
+                </h2>
+            </div>
+        </body>
+    </html>
+    `;
     return htmlTemplate;  
 }
 
