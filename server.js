@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var Articles = {
-    'article-one': { 
+    'articleone': { 
         title: 'Article One Imad @ Sethuraaman',
         heading: 'Article One',
         date: '05 aug 2017;15.00',
@@ -15,7 +15,7 @@ var Articles = {
                 THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE
             </P>`
         },
-    'article-two': {
+    'articletwo': {
         title: 'Article One Iamd @ sethuraaman',
         heading: 'article Two',
         date: '05.08.2017;16.00',
@@ -24,7 +24,7 @@ var Articles = {
                 this the my first code work
             </p>`
         },
-    'article-three': {
+    'articlethree': {
         title: 'Article One Imad @ sethuraaman',
         heading: 'Article three',
         date: '05.08.2017;17.00',
@@ -79,14 +79,6 @@ app.get('/', function (req, res) {
 app.get('/:articlename', function (req, res) {
     var articleName= req.params.articleName;
   res.send(createTamplate(Articles[articleName]));
-});
-
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });
 
 app.get('/ui/style.css', function (req, res) {
