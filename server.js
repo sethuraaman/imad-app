@@ -21,13 +21,13 @@ var articleone = {
         </P>`
 };
 
-function createtemplate (data) {
+function createTemplate (data) {
     var title =data.title;
     var date= data.date;
     var heading= data.heading;
     var content= data.content;
 
-    var htmltamplate =`
+    var htmlTamplate =`
     <html>
         <head>
             <title>
@@ -53,14 +53,14 @@ function createtemplate (data) {
         </body>
     </html>
     `
-    return htmltamplate;
+    return htmlTamplate;
 }
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one', function (req, res) {
-  res.send(createtamplate(articleone));
+  res.send(createTamplate(articleone));
 });
 
 app.get('/article-two', function (req, res) {
