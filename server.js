@@ -76,7 +76,7 @@ function createmplate(data){
                 </div>
             </body>
         </html>
-        ';
+        `;
     return htmlTemplate;  
 }
 
