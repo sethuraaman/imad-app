@@ -6,70 +6,78 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
-    'article-One': { 
-        title: 'Article One Imad @ Sethuraaman',
-        heading: 'Article One',
-        date: '05 aug 2017;15.00',
-        content:`
-            <P>
-                THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE
-            </P>`
-        },
+    'article-one': {
+        title: 'Article One by Sethuraaman',
+        date: '05 AUG 2017;1700',
+        heading: 'ARTICLE ONE',
+        content: `
+        <p>
+            this is my first web which i was tring it my own
+        </p>
+        `,
+    },
     'article-Two': {
-        title: 'Article One Iamd @ sethuraaman',
-        heading: 'article Two',
-        date: '05.08.2017;16.00',
-        content:`
-            <p>
-                this the my first code work
-            </p>`
-        },
+        title: 'Article One by Sethuraaman',
+        date: '05 AUG 2017;1600',
+        heading: 'ARTICLE TWO',
+        content: `
+            <p
+                Iam Trying my Best to Do It
+            </p>
+            `
+    },
     'article-Three': {
-        title: 'Article One Imad @ sethuraaman',
-        heading: 'Article three',
-        date: '05.08.2017;17.00',
-        content:`
-            <p>
-                this is my first html programming
-            </p>`
-        },
+        title: ' Article One by Sethuraaman',
+        date: '05 AUG 2017;1800',
+        heading: 'ARTICLE THREE',
+        content: `
+        <p>
+            It Might Be The Correct One
+        </p>
+            `,
+    },
+    
 };
 
-function createTemplate (data) {
+function createmplate(data){
     var title = data.title;
     var date = data.date;
     var heading = data.heading;
     var content = data.content;
-
-    var htmlTamplate = `
-    <html>
-        <head>
-            <title>
-                ${title}
-            </title>
-            <meta name="viewport" content="width=device-width, intial-scale=1">
-            <link href="/ui/style.css" rel="stylesheet">
-        </head>
-        <body>
-            <div class="container">
-                <div>
-                    <a href="/">HOME</a>
+    
+     var htmlTemplate = `
+        <html>
+            <head>
+                <title>
+                    <h1>
+                    ${title}
+                    </h1>
+                </title>
+                <meta name='veiwport' content= 'width=device-width' intial-scale=1>
+                <link href="/ui/style.css" rel="stylesheet" />
+            </head>
+            <body>
+                <div class="container">
+                    <a href="/"><H1>HOME</H1></a>
                 </div>
                 <hr/>
-                <h3>
-                    ${heading} 
-                </h3>
-                <DIV>
+                <div>
+                    <h3>
+                    ${head}
+                    </h3>
+                </div>
+                <div>
                     ${date}
-                </DIV>
-                <DIV>
-                    ${content}
-                </DIV>
-            </div>
-        </body>
-    </html>
-    `;
-    return htmlTamplate;
+                </div>
+                <div>
+                    <h2>
+                        ${content}
+                    </h2>
+                </div>
+            </body>
+        </html>
+        ';
+    return htmlTemplate    
 }
 
 app.get('/', function (req, res) {
