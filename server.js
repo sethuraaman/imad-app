@@ -16,7 +16,7 @@ var articles = {
             this is my first web which i was tring it my own
         </p>
         `
-    }
+    },
     "articleTwo": {
         title: "Article Two by Sethuraaman",
         heading: "ARTICLE TWO",
@@ -27,7 +27,7 @@ var articles = {
             Iam Trying my Best to Do It
         </p>
         `
-    }
+    },
     "articleThree": {
         title: "Article Three by Sethuraaman",
         heading: "ARTICLE THREE",
@@ -40,7 +40,7 @@ var articles = {
         `
     }
     
-}
+};
 
 function createTemplate (data) {
     var title = data.title;
