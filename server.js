@@ -13,8 +13,7 @@ var articles = {
         content: `
         <p>
             this is my first web which i was tring it my own
-        </p>
-        `,
+        </p>`
     },
     'article-Two': {
         title: 'Article Two by Sethuraaman',
@@ -23,8 +22,7 @@ var articles = {
         content: `
             <p
                 Iam Trying my Best to Do It
-            </p>
-            `
+            </p>`
     },
     'article-Three': {
         title: ' Article Three by Sethuraaman',
@@ -33,8 +31,7 @@ var articles = {
         content: `
         <p>
             It Might Be The Correct One
-        </p>
-            `,
+        </p>`
     },
     
 };
