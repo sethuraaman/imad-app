@@ -39,7 +39,7 @@ var articles = {
     
 };
 
-function createTemplate(data){
+function createTemplate (data) {
     var title = data.title;
     var date = data.date;
     var heading = data.heading;
@@ -63,7 +63,7 @@ function createTemplate(data){
                 <hr/>
                 <div>
                     <h3>
-                    ${head}
+                    ${heading}
                     </h3>
                 </div>
                 <div>
@@ -71,7 +71,7 @@ function createTemplate(data){
                 </div>
                 <div>
                     <h2>
-                        ${content}
+                    ${content}
                     </h2>
                 </div>
             </body>
