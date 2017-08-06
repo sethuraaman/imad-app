@@ -1,15 +1,15 @@
-var express = require("express");
-var morgan = require("morgan");
-var path = require("path");
+var express = require('express');
+var morgan = require('morgan');
+var path = require('path');
 
 var app = express();
-app.use(morgan("combined"));
+app.use(morgan('combined'));
 
 var articles = {
-    "article-One": {
-        title: "Article One by Sethuraaman",
-        heading: "ARTICLE ONE",
-        date: "05 AUG 2017;1700",
+    'article-One': {
+        title: 'Article One by Sethuraaman',
+        heading: 'ARTICLE ONE',
+        date: '05 AUG 2017  1700',
         content:
         `
         <p>
@@ -17,10 +17,10 @@ var articles = {
         </p>
         `
     },
-    "article-Two": {
-        title: "Article Two by Sethuraaman",
-        heading: "ARTICLE TWO",
-        date: "05 AUG 2017;1800",
+    'article-Two': {
+        title: 'Article Two by Sethuraaman',
+        heading: 'ARTICLE TWO'
+        date: '05 AUG 2017  1800',
         content:
         `
         <p
@@ -28,10 +28,10 @@ var articles = {
         </p>
         `
     },
-    "article-Three": {
-        title: "Article Three by Sethuraaman",
-        heading: "ARTICLE THREE",
-        date: "05 AUG 2017;1900",
+    'article-Three': {
+        title: 'Article Three by Sethuraaman',
+        heading: 'ARTICLE THREE',
+        date: '05 AUG 2017;1900',
         content: 
         `
         <p>
