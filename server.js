@@ -31,15 +31,15 @@ function createTamplate (data){`
             </div>
         </body>
     </html>
-    `
+    `;
 }
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one', function (req, res){
-    var articleName= req.params.articleName
-    res.send(createtamplate(articles[articleName]));
+    var articleName= req.params.articleName;
+    res.send(createTamplate(article-one));
 });
 
 app.get('/article-two', function (req, res){
