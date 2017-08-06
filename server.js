@@ -5,19 +5,41 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articles= {
-    'article-one': ('aricle-one.html'),
-    articletwo: 'aricle-two.html',
-    articlethree: 'aricle-three.html'
-};
-
+function createTamplate (data){`
+    <html> 
+        <head>
+            <title>
+                Article one | sethu18
+            </title>
+        <meta name="viewport" content="width=device-width, intial-scale=1">
+        <link href="/ui/style.css" rel="stylesheet">
+        </head>
+        <body>
+            <div class="container">
+                <div>
+                    <a href="/">HOME</a>
+                </div>
+                <hr/>
+                <h3> ARTICLE ONE</h3>
+                <DIV>
+                    AUG 05 2017
+                </DIV>
+                <DIV>
+                    <P>THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE.
+                    </P>
+                </DIV>
+            </div>
+        </body>
+    </html>
+    `
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:articleName', function (req, res){
+app.get('/article-one', function (req, res){
     var articleName= req.params.articleName
-    res.sendFile(path.join(__dirname,'ui',articles[articleName]));
+    res.send(createtamplate(article-one));
 });
 
 app.get('/article-two', function (req, res){
