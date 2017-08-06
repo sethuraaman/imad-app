@@ -38,8 +38,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article-one', function (req, res){
-   // var articleName= req.params.articleName
-    res.send(createtamplate(article-one));
+    var articleName= req.params.articleName
+    res.send(createtamplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res){
