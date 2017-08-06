@@ -4,18 +4,25 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
+var articles= {
+    `
+    'article-one': (__dirname('ui', 'aricle-one.html'));
+    'article-two': (__dirname('ui', 'aricle-two.html'));
+    'article-three': (__dirname('ui', 'aricle-three.html'));
+    
+};
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'Article-one.html'));
+app.get('/:articlename', function (req, res){
+    var articlename= req.params.articlename
+    res.sendFile(path.join(__dirname, 'ui', 'Articlename.html'));
 });
 
 app.get('/article-two', function (req, res){
-    res.send('article two will be served')
+    res.sendFile(path.join(__dirname,'ui', 'article-two.html'));
 });
 
 app.get('/article-Three', function (req, res){
