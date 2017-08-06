@@ -5,33 +5,34 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-function createTamplate (data){`
-    <html> 
+function createTamplate (data){
+  var htmltamplate= `
+      <html> 
         <head>
-            <title>
-                Article one | sethu18
-            </title>
-        <meta name="viewport" content="width=device-width, intial-scale=1">
-        <link href="/ui/style.css" rel="stylesheet">
+          <title>
+            Article one | sethu18
+          </title>
+          <meta name="viewport" content="width=device-width, intial-scale=1">
+          <link href="/ui/style.css" rel="stylesheet">
         </head>
         <body>
-            <div class="container">
-                <div>
-                    <a href="/">HOME</a>
-                </div>
-                <hr/>
-                <h3> ARTICLE ONE</h3>
-                <DIV>
-                    AUG 05 2017
-                </DIV>
-                <DIV>
-                    <P>THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE.
-                    </P>
-                </DIV>
+          <div class="container">
+            <div>
+                <a href="/">HOME</a>
             </div>
+            <hr/>
+            <h3> ARTICLE ONE</h3>
+            <DIV>
+                AUG 05 2017
+            </DIV>
+            <DIV>
+                <P>THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE, THIS IS FIRST ARTICLE PAGE.
+                </P>
+            </DIV>
+          </div>
         </body>
-    </html>
-    `;
+      </html> ` ;
+    return htmltaplate
 }
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
