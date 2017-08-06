@@ -5,9 +5,9 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 var articles= {
-    articleone: (__dirname, 'ui', 'aricle-one.html'),
-    articletwo: (__dirname, 'ui', 'aricle-two.html'),
-    articlethree: (__dirname, 'ui', 'aricle-three.html')
+    'article-one': ('aricle-one.html'),
+    'article-two': ('aricle-two.html'),
+    'article-three': ('aricle-three.html')
 };
 
 app.get('/', function (req, res) {
@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 
 app.get('/:articleName', function (req, res){
     var articleName= req.params.articleName
-    res.sendFile(path.join(articles[articleName]));
+    res.sendFile(path.join(__dirname,'ui',articles[articleName]));
 });
 
 app.get('/article-two', function (req, res){
