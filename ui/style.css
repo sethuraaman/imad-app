@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: lucida ;
     margin-top: 75px;
 }
 
@@ -22,7 +22,7 @@ body {
                 max-width: 800px;
                 margin: 0 auto;
                 color: blue;
-                font-family: lucida scans;
+                font-family: lucida ;
                 padding-left: 20px;
                 padding-right: 20Px;
                 
