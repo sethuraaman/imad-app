@@ -25,6 +25,15 @@ var articles = {
         <p>
         <h1> this is my trial to reduce the coding </h1>
         </p>`
+    },
+    articlethree: {
+        title:'Article Three || Sethuraaman',
+        date:'07 Aug 2017',
+        heading:'Article Three',
+        Content:`
+        <p>
+        <h1> this is the confirmed page which i created with the help of IMAD </h1>
+        </p>`
     }
 };
 
