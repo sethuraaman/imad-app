@@ -16,14 +16,15 @@ var articles = {
 	   </h1>
 	   </p>`
     },
+    
     articletwo: {
-       title: 'Article One || Sethuraaman',
-       date: '05 aug 2017',
-       heading: 'Article One',
-       content: `
-	   <p>
-	   <h1> This is my own first app designing learnt from IMAD </h1>
-	   </p>`
+        title: 'Aritcle Two || Sethuraaman',
+        date: '06 Aug 2017',
+        heading: 'Article Two',
+        Content: `
+        <p>
+        <h1> this is my trial to reduce the coding </h1>
+        </p>`
     }
 };
 
@@ -36,30 +37,30 @@ function createTemplate (data) {
    
    var htmlTemplate =
       `
-     <html>
-    <head>
-        <title>
-            Article one | sethu18
-        </title>
-        <meta name="viewport" content="width=device-width, intial-scale=1">
-        <link href="/ui/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="container">
-            <div>
-                <a href="/">HOME</a>
+    <html>
+        <head>
+            <title>
+                Article one | sethu18
+            </title>
+            <meta name="viewport" content="width=device-width, intial-scale=1">
+            <link href="/ui/style.css" rel="stylesheet">
+        </head>
+        <body>
+            <div class="container">
+                <div>
+                    <a href="/">HOME</a>
+                </div>
+                <hr/>
+                <h3> ${heading}</h3>
+                <DIV>
+                    ${date}
+                </DIV>
+                <DIV>
+                    ${content}
+                </DIV>
             </div>
-            <hr/>
-            <h3> ${heading}</h3>
-            <DIV>
-                ${date}
-            </DIV>
-            <DIV>
-                ${content}
-            </DIV>
-        </div>
-    </body>
-</html>
+        </body>
+    </html>
    `;
    return htmlTemplate;
 }
