@@ -5,16 +5,27 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone = {
+var articles = {
+    articleone: {
        title: 'Article One || Sethuraaman',
        date: '05 aug 2017',
        heading: 'Article One',
        content: `
 	   <p>
-	   <h1> this is my own first app designing learnt from IMAD
+	   <h1> This is my own first app designing learnt from IMAD
 	   </h1>
 	   </p>`
-    };
+    },
+    articletwo: {
+        title: 'Article Two || Sethuraaman',
+        date: '06 Aug 2017',
+        heading: 'Article Two',
+        content: `
+        <p> 
+        <h1> this my trail to reduce the coding</h1>
+        </p>`
+    }
+};
 
 
 function createTemplate (data) {
@@ -60,14 +71,14 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/articleone', function(req, res) {
-    //var articleName = req.params.articleName;
-    res . send(createTemplate(articleone));
+app.get('/:articleName', function(req, res) {
+    var articleName = req.params.articleName;
+    res . send(createTemplate(articles[articleName]));
 });
 
-app.get('/Article-two', function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
+//app.get('/Article-two', function (req, res) {
+//  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+//});
 
 app.get('/Article-three', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
