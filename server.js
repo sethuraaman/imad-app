@@ -49,9 +49,7 @@ function createTemplate (data) {
       <html>
 	     <head>
 	        <title>
-	           <h2>
-	              ${title}
-	           </h2>
+	           ${title}
 	        </title>
 	        <meta Name="viewport" content="width=device-width, intial-scale=1">
 	        <link href="/ui/stle.css" rel="stylsheet"/>
