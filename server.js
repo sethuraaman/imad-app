@@ -5,16 +5,37 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone = {
-      title: 'Article One || Sethuraaman',
-      date: '05 aug 2017',
-      heading: 'Article One',
-      content: `
-	<p>
-	<h1> this is my own first app designing learnt from IMAD
-	</h1>
-	</p>`
-
+var articles = {
+    articleone:{
+       title: 'Article One || Sethuraaman',
+       date: '05 aug 2017',
+       heading: 'Article One',
+       content: `
+	   <p>
+	   <h1> this is my own first app designing learnt from IMAD
+	   </h1>
+	   </p>`
+    },
+    articletwo:{
+       title: 'Article Two || Sethuraaman',
+       date: '06 aug 2017',
+       heading: 'Article Two',
+       content: `
+	   <p>
+	   <h1> this is my own first app designing learnt from IMAD
+	   </h1>
+	   </p>`
+    },
+    articlethree:{
+       title: 'Article Three || Sethuraaman',
+       date: '07 aug 2017',
+       heading: 'Article Three',
+       content: `
+	   <p>
+	   <h1> Now iam trained in thes web page, learnt from IMAD
+	   </h1>
+	   </p>`
+    }
 };
 
 function createTemplate (data) {
@@ -23,7 +44,8 @@ function createTemplate (data) {
    var heading = data.heading;
    var content = data.content;
    
-   var htmlTemplate =`
+   var htmlTemplate =
+      `
       <html>
 	     <head>
 	        <title>
@@ -31,13 +53,13 @@ function createTemplate (data) {
 	              ${title}
 	           </h2>
 	        </title>
-	        <meta Name='viewport' content='width=device-width, intial-scale=1'>
-	        <link href='/ui/stle.css' rel='stylsheet'/>
+	        <meta Name="viewport" content="width=device-width, intial-scale=1">
+	        <link href="/ui/stle.css" rel="stylsheet"/>
 	     </head>
 	     <body>
-	        <div class='container'>
+	        <div class="container">
 	           <div>
-		          <a href='/'>HOME</a>
+		          <a href="/">HOME</a>
 	           </div>
 	           <hr/>
 	           <h3>
@@ -61,8 +83,9 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/articleone', function(req, res) {
-    res . send(createTemplate(articleone));
+app.get('/:articleName', function(req, res) {
+    var articleName = data.articleName;
+    res . send(createTemplate(articles[articleName]));
 });
 
 app.get('/Article-two', function (req, res) {
