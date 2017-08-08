@@ -17,9 +17,9 @@ var articles = {
 	   </p>`
     },
     articletwo:{
-       title: 'Article Two || Sethuraaman',
-       date: '06 aug 2017',
-       heading: 'Article Two',
+       title: 'Article One || Sethuraaman',
+       date: '05 aug 2017',
+       heading: 'Article One',
        content: `
 	   <p>
 	   <h1> this is my own first app designing learnt from IMAD
