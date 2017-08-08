@@ -17,6 +17,48 @@ var articleone = {
 
 };
 
+function createTemplate (data) {
+   var title = data.title;
+   var date = data.date;
+   var head = data.head;
+   var content = data.content;
+   
+   var htmlTemplate =`
+      <html>
+	 <head>
+	    <title>
+	       <h2>
+	       ${title}
+	       </h2>
+	    </title>
+	    <meta Name='viewport' content='width=device-width, 
+
+intial-scale=1'>
+	    <link href='/ui/stle.css' rel='stylsheet'/>
+	 </head>
+	 <body>
+	    <div class='container'>
+	       <div>
+		  <a href='/'>HOME</a>
+	       </div>
+	       <hr/>
+	       <h3>
+		  ${heading}
+	       </h3>
+	       <div>
+		  ${date}
+	       </div>
+	       <div>
+		  ${content}
+	       </div>
+	    </div>
+	 </body>
+      </html>  
+   `;
+   return htmlTemplate;
+}
+
+
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
