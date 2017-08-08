@@ -95,6 +95,16 @@ var articles = {
 	   </h1>
 	   </p>`
     },
+    articletwo:{
+       title: 'Article One || Sethuraaman',
+       date: '05 aug 2017',
+       heading: 'Article One',
+       content: `
+	   <p>
+	   <h1> this is my own first app designing learnt from IMAD
+	   </h1>
+	   </p>`
+    },
    
 };
 
@@ -141,13 +151,13 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/Article-three', function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
-
 app.get('/:articleName', function(req, res) {
     var articleName = req.params.articleName;
     res . send(createTemplate(articles[articleName]));
+});
+
+app.get('/Article-three', function (req, res) {
+    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });
 
 app.get('/ui/style.css', function (req, res) {
