@@ -36,32 +36,30 @@ function createTemplate (data) {
    
    var htmlTemplate =
       `
-      <html>
-	     <head>
-	        <title>
-	           ${title}
-	        </title>
-	        <meta Name="viewport" content="width=device-width, intial-scale=1">
-	        <link href="/ui/stle.css" rel="stylsheet"/>
-	     </head>
-	     <body>
-	        <div class= 'container'>
-	           <div>
-		          <a href="/">HOME</a>
-	           </div>
-	           <hr/>
-	           <h3>
-		          ${heading}
-	           </h3>
-	           <div>
-		          ${date}
-	           </div>
-	           <div>
-		           ${content}
-	           </div>
-	        </div>
-	    </body>
-      </html>  
+     <html>
+    <head>
+        <title>
+            Article one | sethu18
+        </title>
+        <meta name="viewport" content="width=device-width, intial-scale=1">
+        <link href="/ui/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <a href="/">HOME</a>
+            </div>
+            <hr/>
+            <h3> ${heading}</h3>
+            <DIV>
+                ${date}
+            </DIV>
+            <DIV>
+                ${content}
+            </DIV>
+        </div>
+    </body>
+</html>
    `;
    return htmlTemplate;
 }
