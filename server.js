@@ -5,9 +5,24 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleone = {
+      title: 'Article One || Sethuraaman',
+      date: '05 aug 2017',
+      head: 'Article One',
+      content: `
+	<p>
+	<h1> this is my own first app designing learnt from IMAD
+	</h1>
+	</p>`
+
+};
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+app.get('/articleone', function(req, res) {
+    res.send(createtemplate(articleone));
 });
 
 app.get('/ui/style.css', function (req, res) {
