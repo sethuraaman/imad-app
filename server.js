@@ -22,8 +22,7 @@ var articles = {
        heading: 'Article One',
        content: `
 	   <p>
-	   <h1> This is my own first app designing learnt from IMAD
-	   </h1>
+	   <h1> This is my own first app designing learnt from IMAD </h1>
 	   </p>`
     }
 };
