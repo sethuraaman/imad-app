@@ -95,16 +95,7 @@ var articles = {
 	   </h1>
 	   </p>`
     },
-    articletwo:{
-       title: 'Article One || Sethuraaman',
-       date: '05 aug 2017',
-       heading: 'Article One',
-       content: `
-	   <p>
-	   <h1> this is my own first app designing learnt from IMAD
-	   </h1>
-	   </p>`
-    }
+   
 };
 
 function createTemplate (data) {
