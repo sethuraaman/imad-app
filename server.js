@@ -17,13 +17,14 @@ var articles = {
 	   </p>`
     },
     articletwo: {
-        title: 'Article Two || Sethuraaman',
-        date: '06 Aug 2017',
-        heading: 'Article Two',
-        content: `
-        <p> 
-        <h1> this my trail to reduce the coding</h1>
-        </p>`
+       title: 'Article One || Sethuraaman',
+       date: '05 aug 2017',
+       heading: 'Article One',
+       content: `
+	   <p>
+	   <h1> This is my own first app designing learnt from IMAD
+	   </h1>
+	   </p>`
     }
 };
 
@@ -45,7 +46,7 @@ function createTemplate (data) {
 	        <link href="/ui/stle.css" rel="stylsheet"/>
 	     </head>
 	     <body>
-	        <div class= "container">
+	        <div class= 'container'>
 	           <div>
 		          <a href="/">HOME</a>
 	           </div>
@@ -77,7 +78,7 @@ app.get('/Article-three', function (req, res) {
 
 app.get('/:articleName', function(req, res) {
     var articleName = req.params.articleName;
-    res . send(createTemplate(articles[articleName]));
+    res.send(createTemplate(articles[articleName]));
 });
 
 //app.get('/Article-two', function (req, res) {
