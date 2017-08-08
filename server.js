@@ -104,8 +104,7 @@ var articles = {
 	   <h1> this is my own first app designing learnt from IMAD
 	   </h1>
 	   </p>`
-    },
-   
+    }
 };
 
 function createTemplate (data) {
