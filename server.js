@@ -45,7 +45,7 @@ function createTemplate (data) {
 	        <link href="/ui/stle.css" rel="stylsheet"/>
 	     </head>
 	     <body>
-	        <div class="container">
+	        <div class= "container">
 	           <div>
 		          <a href="/">HOME</a>
 	           </div>
