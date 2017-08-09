@@ -32,7 +32,9 @@ var articles = {
         heading:'Article Three',
         Content:`
         <p>
-        <h1> this is the confirmed page which i created with the help of IMAD </h1>
+        <h1> this is the confirmed page which i created with the 
+
+help of IMAD </h1>
         </p>`
     }
 };
@@ -50,7 +52,9 @@ function createTemplate (data) {
             <title>
                 Article one | sethu18
             </title>
-            <meta name="viewport" content="width=device-width, intial-scale=1">
+            <meta name="viewport" content="width=device-width, 
+
+intial-scale=1">
             <link href="/ui/style.css" rel="stylesheet">
         </head>
         <body>
