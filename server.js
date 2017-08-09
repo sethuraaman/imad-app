@@ -37,7 +37,6 @@ var articles = {
     }
 };
 
-
 function createTemplate (data) {
    var title = data.title;
    var date = data.date;
@@ -74,7 +73,6 @@ function createTemplate (data) {
    return htmlTemplate;
 }
 
-
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -96,9 +94,9 @@ app.get('/ui/style.css', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/ui/favicon.ico', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
-});
+//app.get('/ui/favicon.ico', function (req, res) {
+//  res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
+//});
 
 app.get('/ui/main.js', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'main.js'));
