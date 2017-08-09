@@ -5,6 +5,11 @@ var element = document.getElementById("main text");
 element.innerHTML = 'M A N I';
 
 var img = document.getElementById('madi');
+   var marginRight = 0;
+   function moveright (){
+        marginleft=marginleft + 10;
+        image.style.marginleft= marginleft + 'px';
+   }
    img.onclick = function () {
-       img.style.marginleft = '100px';
+       var interval = setInterval(moveRight,100);
    };
