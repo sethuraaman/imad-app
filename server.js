@@ -21,7 +21,10 @@ var articles = {
         title: 'Aritcle Two || Sethuraaman',
         date: '06 Aug 2017',
         heading: 'Article Two',
-        Content: '   <h1> this is my trial to reduce the coding </h1> '
+        Content: `
+          <p>
+             <h1> this is my trial to reduce the coding </h1> 
+            </p> `
     },
     articlethree: {
         title:'Article Three || Sethuraaman',
