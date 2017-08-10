@@ -6,10 +6,10 @@ element.innerHTML = 'M A N I';
 
 var img = document.getElementById('madi');
    var marginRight = 0;
-   function moveright (){
-        marginleft=marginleft + 10;
-        image.style.marginleft= marginleft + 'px';
+   function moveRight (){
+        marginLeft=marginLeft + 10;
+        image.style.marginLeft= marginLeft + 'px';
    }
    img.onclick = function () {
-       var interval = setInterval(moveright,100);
+       var interval = setInterval(moveRight,100);
    };
