@@ -6,8 +6,9 @@ button.onclictk = function (){
     
     request.onreadystatechange = function(){
         if (request.readyState === XMLHttpRequest.Done){
-            if request status === 200;){
-                var counter = document.getElementById('counter');
+            if ( request.status === 200){
+                var counter = request.responseText;
+                var span = document.getElementById('counter');
                 span.innerHTML = counter.toString();
             }
             
