@@ -8,7 +8,7 @@ button.onclictk = function (){
         if (request.readyState === XMLHttpRequest.Done){
             if ( request.status === 200){
                 var counter = request.responseText;
-                var span = document.getElementById('counter');
+                var spam = document.getElementById('counter');
                 span.innerHTML = counter.toString();
             }
             
