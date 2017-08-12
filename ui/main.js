@@ -1,4 +1,6 @@
-function exec(){
+var button = document.getElementById('counter');
+
+button.onClick = function exec(){
     
     var request = new XMLHttpRequest();
     
@@ -13,4 +15,4 @@ function exec(){
     };
     request.open('GET', 'http://sethu18rr.imad.hasura-app.io/counter', true);
     request.send(null);
- }
+ };
