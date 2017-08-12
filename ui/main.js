@@ -17,7 +17,7 @@ function exec(){
     request.send(); 
     console.log('EXECUTED');
 }
-var nameinput = document.getElemntById('name');
+var nameinput = document.getElementById('name');
 var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
