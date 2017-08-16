@@ -1,12 +1,9 @@
 function exec(){
     var request = new XMLHttpRequest();
-    request.onreadystatechange = function() 
-    {
-          if (request.readyState === XMLHttpRequest.DONE) 
-          {
+    request.onreadystatechange = function(){
+          if (request.readyState === XMLHttpRequest.DONE) {
               //Take Some Action
-              if (request.status === 200) 
-                { 
+              if (request.status === 200) { 
                     var counter = request.responseText; 
                     var span = document.getElementById('count');
                     span.innerHTML = counter.toString();
@@ -15,25 +12,22 @@ function exec(){
     }; 
     request.open("GET", "http://sethu18rr.imad.hasura-app.io/counter", true);
     request.send(); 
-    console.log('EXECUTED');
+    console.log('finished');
 }
 var submit = document.getElementById('submit_btn');
 submit.onClick= function(){
+    console.log('EXECUTED');
 var request = new XMLHttpRequest();
-    request.onreadystatechange = function() 
-    {
-          if (request.readyState === XMLHttpRequest.DONE) 
-          {
-              //Take Some Action
-              if (request.status === 200) 
-                { 
+    request.onreadystatechange = function(){
+          if (request.readyState === XMLHttpRequest.DONE){
+             if (request.status === 200) { 
                     var names = request.responseText; 
                     names=JSON.parse(names);
                     var list = '';
                     for (var i =0; i < names.length; i++) {
                         list += '<li>' +name[i] + '</li>';
                     }
-                var ul = document.getElementById('namelist')    ;
+                var ul = document.getElementById('namelist');
                 ul.innerHTML = list;
                 } 
           } 
