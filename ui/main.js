@@ -14,9 +14,7 @@ function exec(){
     request.send(); 
     console.log('finished');
 }
-var submit = document.getElementById('submit_btn');
-submit.onClick= function(){
-    console.log('EXECUTED');
+function exec(){
 var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
           if (request.readyState === XMLHttpRequest.DONE){
@@ -37,4 +35,4 @@ var request = new XMLHttpRequest();
     request.open("GET", "http://sethu18rr.imad.hasura-app.io/submit-name?name=" + name, true);
     console.code('executed');
     request.send(null); 
-};
+}
