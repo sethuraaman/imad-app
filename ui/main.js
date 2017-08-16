@@ -20,7 +20,7 @@ function exec(){
 
 
 var submit = document.getElementById('sibmit_btn');
-submit.onClick= function(){
+submit.onclick= function(){
 var request = new XMLHttpRequest();
     request.onreadystatechange = function() 
     {
