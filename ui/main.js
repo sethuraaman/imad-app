@@ -41,5 +41,5 @@ var request = new XMLHttpRequest();
     var nameInput=document.getElementById('name');
     var name =request.responseText;
     request.open("GET", "http://sethu18rr.imad.hasura-app.io/submit-name?name=" + name, true);
-    request.send(null); 
+    request.send(); 
 };
