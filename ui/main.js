@@ -17,6 +17,8 @@ function exec(){
     request.send(); 
     console.log('EXECUTED');
 }
+
+
 var submit = document.getElementById('sibmit_btn');
 submit.onClick= function(){
 var request = new XMLHttpRequest();
