@@ -35,5 +35,5 @@ var request = new XMLHttpRequest();
           } 
     }; 
     request.open("GET", "http://sethu18rr.imad.hasura-app.io/submit-name?name=" + name, true);
-    request.send(); 
+    request.send(null); 
     
