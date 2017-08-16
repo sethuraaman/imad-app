@@ -17,7 +17,7 @@ function exec(){
     request.send(); 
     console.log('EXECUTED');
 }
-var submit = document.getElementById('sibmit_btn');
+var submit = document.getElementById('submit_btn');
 submit.onClick= function(){
 var request = new XMLHttpRequest();
     request.onreadystatechange = function() 
