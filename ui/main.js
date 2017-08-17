@@ -15,7 +15,7 @@ function exec(){
     console.log('finished');
 }
 var nameInput=document.getElementById('name');
-var name = nameInput.value;
+var names = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onClick= function(){
     var names = ['name1', 'name2', 'name3', 'name4'];
