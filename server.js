@@ -89,7 +89,7 @@ var names = [];
 app.get('/submit-name/:name', function(req,res){
     var name = req.query.name;
     names.push(name);
-    req.send(JSON.stringyfy(names));
+    res.send(JSON.stringyfy(names));
 });
 
 app.get('/:articleName', function(req, res) {
