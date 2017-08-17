@@ -15,7 +15,7 @@ function exec(){
     console.log('finished');
 }
 var nameInput = document.getElementById('name');
-var name = nameInput.value;
+var names = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function () {
     //make a request to the server
