@@ -15,18 +15,28 @@ function exec(){
     console.log('finished');
 }
 var nameInput = document.getElementById('name');
-var names = nameInput.value;
+var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function () {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function(){
+          if (request.readyState === XMLHttpRequest.DONE) {
+              //Take Some Action
+              if (request.status === 200) { 
+                    //capture a list of names and render it as a list
+                    var names = request.responseText;
+                    names = JSON.parse(names);
+                    var list = '';
+                    for(var i=0;i< names.length; i++){
+                        list +='<li>' + names[i] + '</li>';
+                        }
+                    var ul = document.getElementById('namelist');
+                    ul.innerHTML = list;
+                } 
+          } 
+    }; 
+    request.open("GET", "http://sethu18rr.imad.hasura-app.io/submit-name?name="+ name, true);
+    request.send(); 
     //make a request to the server
-    
-    //capture a list of names and render it as a list
-    var names = ['name1','name2','name3', 'name4'];
-    var list = '';
-    for(var i=0;i< names.length; i++){
-        list +='<li>' + names[i] + '</li>';
-        }
-    var ul = document.getElementById('namelist');
-    ul.innerHTML = list;
 };
     console.log ('executing');
