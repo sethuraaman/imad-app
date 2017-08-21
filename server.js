@@ -72,7 +72,7 @@ function createTemplate (data) {
                 <hr/>
                 <h3> ${heading}</h3>
                 <DIV>
-                    ${date.toDataString()}
+                    ${date}
                 </DIV>
                 <DIV>
                     ${content}
