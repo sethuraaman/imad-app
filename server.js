@@ -14,40 +14,6 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles = {
-    articleone: {
-       title: 'Article One || Sethuraaman',
-       date: '05 aug 2017',
-       heading: 'Article One',
-       content: `
-	   <p>
-	   <h1> This is my own first app designing learnt from IMAD
-	   </h1>
-	   </p>`
-    },
-    
-    articletwo: {
-        title: 'Aritcle Two || Sethuraaman',
-        date: '06 Aug 2017',
-        heading: 'Article Two',
-        Content: `
-          <p>
-             <h1> this is my trial to reduce the coding </h1> 
-            </p> `
-    },
-    articlethree: {
-        title:'Article Three || Sethuraaman',
-        date:'07 Aug 2017',
-        heading:'Article Three',
-        Content:`
-        <p>
-        <h1> this is the confirmed page which i created with the 
-
-help of IMAD </h1>
-        </p>`
-    }
-};
-
 function createTemplate (data) {
    var title = data.title;
    var date = data.date;
