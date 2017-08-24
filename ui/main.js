@@ -13,7 +13,7 @@ submit.onclick = function () {
                         alert('something went wrong in the server');
                     }
                 } 
-          } 
+          }; 
     }; 
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value; 
