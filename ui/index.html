@@ -2,28 +2,42 @@
 <html>
     <head>
         <link href="/ui/style.css" rel="stylesheet" />
+	    <style="backgroung_color:#lightgrey;">
     </head>
     <body>
        <div class=container>
+	    <div>
+                <a href="/articleone">Article-one</a>
+		<a href="/articletwo">Article-two</a>
+		<a href="/articlethree">Article-three</a>
+		<a href="/counter"">counter</a>
+            </div>
+
             <div id = 'madi' class="center">
-             <img src="https://scontent-sit4-1.xx.fbcdn.net/v/t1.0-9/20621266_791693077659333_5988170281195454586_n.jpg?oh=f44b76ffe4af35acf46608a40a6931ac&oe=59ED00D4" class="img-medium"/>
+             <img src="https://scontent-sit4-1.xx.fbcdn.net/v/t1.0-
+
+9/20621266_791693077659333_5988170281195454586_n.jpg?
+
+oh=f44b76ffe4af35acf46608a40a6931ac&oe=59ED00D4" class="img-medium"/>
             </div>
-            <h3>About Me</h3>
-            <div>
-                Hi. My name is Tanmai Gopal<br/>
-                I work at Hasura
+            <br>
+            <div class="center text-big">
+              A New Heading 
             </div>
-            <hr/>
-            <div id="login_area">
-                <center>Loading login status...</center>
+            <div class="center text-big">
+                My First web app
             </div>
-            <hr/>
-            <h3>My Articles</h3>
-            <div id="articles">
-                <center>Loading articles...</center>
-            </div>
-            <div class="footer">
-            </div>
+		<hr/>
+	    <div class= "center footer">
+	        This is the <button id='counter'>BUTTON</button>has be 
+
+clicked <span id='count'> 0 </span> times.
+	    <hr/>
+	    <input type="text" id="name" placeholder="name"></input>
+	    <input type="submit" id="submit_btn" value="submit"></input>
+	    <ul id="namelist">
+	    </ul>
+	    </div>
         </div>
         <script type="text/javascript" src="/ui/main.js">
         </script>
