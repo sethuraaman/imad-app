@@ -39,15 +39,9 @@ var articles = {
         heading:'Article Three',
         content:`
         <p>
-        <h1> this is the confirmed page which i created with the help of 
-
-IMAD </h1>
+        <h1> this is the confirmed page which i created with the help of IMAD </h1>
         </p>`
-    },
-    'submit-name': {
-        var name: req.query.name;
-        names.push(name);
-	    res.send(JSON.stringify(names));
+    }
 };
 
 function createTemplate (data) {
@@ -56,8 +50,8 @@ function createTemplate (data) {
    var heading = data.heading;
    var content = data.content;
    var herf = data.herf;
-   var link1 = data.link1
-   var link2 = data.link2
+   var link1 = data.link1;
+   var link2 = data.link2;
    
    var htmlTemplate =
       `
@@ -103,11 +97,11 @@ app.get('/counter',function(resq,res){
 });
 
 var names = [];
-/*app.get('/submit-name',function(req,res){
-   var name = req.query.name;
+app.get('/submit-name/:name',function(req,res){
+   var name = req.params.name;
    names.push(name);
    res.send(JSON.stringify(names));
-});*/
+});
 
 app.get('/:articleName', function(req, res) {
     var articleName = req.params.articleName;
