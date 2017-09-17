@@ -1,6 +1,14 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var pool = require('pg').Pool;
+var config = {
+    user: 'sethu18rr',
+    database: 'sethu18rr',
+    host: 'db.imad.hasura-app.io',
+    port: '5432',
+    password: process.env.DB_PASSWORD
+};
 var app = express();
 app.use(morgan('combined'));
 
@@ -39,7 +47,9 @@ var articles = {
         heading:'Article Three',
         content:`
         <p>
-        <h1> this is the confirmed page which i created with the help of IMAD </h1>
+        <h1> this is the confirmed page which i created with the help of 
+
+IMAD </h1>
         </p>`
     }
 };
@@ -50,8 +60,8 @@ function createTemplate (data) {
    var heading = data.heading;
    var content = data.content;
    var herf = data.herf;
-   var link1 = data.link1;
-   var link2 = data.link2;
+   var link1 = data.link1
+   var link2 = data.link2
    
    var htmlTemplate =
       `
@@ -60,7 +70,9 @@ function createTemplate (data) {
             <title>
                 ${title}
             </title>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="viewport" content="width=device-width, initial-
+
+scale=1">
             <link href="/ui/style.css" rel="stylesheet">
         </head>
         <body>
@@ -89,6 +101,16 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var pool = new Pool(config);
+app.get('/test-db', function(req, res) {
+   pool.query('SELECT * FROM test', function (err, result){
+      if(err){
+	 res.status(500).send(err.toString());
+      } else {
+	 res.send(JSON.Stringify(result));
+      }
+   });
+});
 
 var counter=0;
 app.get('/counter',function(resq,res){
