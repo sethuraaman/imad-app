@@ -60,8 +60,8 @@ function createTemplate (data) {
    var heading = data.heading;
    var content = data.content;
    var herf = data.herf;
-   var link1 = data.link1
-   var link2 = data.link2
+   var link1 = data.link1;
+   var link2 = data.link2;
    
    var htmlTemplate =
       `
