@@ -4,6 +4,8 @@ var path = require('path');
 var http = require('http');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
+var bodyParser = require('body-parser');
+
 var config = {
     user: 'sethu18rr',
     database: 'sethu18rr',
@@ -13,6 +15,7 @@ var config = {
 };
 var app = express();
 app.use(morgan('combined'));
+app.use(bodyParser.json());
 
 function createTemplate (data) {
    var title = data.title;
@@ -29,7 +32,9 @@ function createTemplate (data) {
             <title>
                 ${title}
             </title>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="viewport" content="width=device-width, initial-
+
+scale=1">
             <link href="/ui/style.css" rel="stylesheet">
         </head>
         <body>
@@ -69,13 +74,17 @@ app.get('/hash/:input', function(req, res){
 });
 
 app.get('/create-user', function (req, res){
-   var salt = crypto.getRandomBytes(128).toString('hex');
+   var username = req.body.username;
+   var password = req.body.password;
+   var salt = crypto.randomBytes(128).toString('hex');
    vardbString = hash(password, salt);
-   pool.query('INSERT INTO "user" (username, password) VALUES($1, $2)', [username, dbString], function (err, result){
+   pool.query('INSERT INTO "user" (username, password) VALUES($1, $2)', 
+
+[username, dbString], function (err, result){
       if(err){
-	     res.status(500).send(err.toString());
+	 res.status(500).send(err.toString());
       } else {
-	     res.send('user successfully created: ' + username);
+	 res.send('user successfully created: ' + username);
       }
    });
 });
@@ -84,9 +93,9 @@ var pool = new Pool(config);
 app.get('/test-db', function(req, res){
    pool.query('SELECT * FROM test', function (err, result){
       if(err){
-	     res.status(500).send(err.toString());
+	 res.status(500).send(err.toString());
       } else {
-	     res.send(JSON.stringify(result));
+	 res.send(JSON.stringify(result));
       }
    });
 });
@@ -105,17 +114,19 @@ app.get('/submit-name',function(req,res){
 });
 
 app.get('/:articleName', function(req, res) {
-    pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], function(err, result){
+    pool.query("SELECT * FROM article WHERE title = $1", 
+
+[req.params.articleName], function(err, result){
         if (err){
-	        res.status(500).send(err.toString());
-	    } else {
-	        if (result.rows.length === 0) {
-		        res.status(404).send('Article not found');
-	        } else{
-   	            var articleData = result.rows[0];
-	        	res.send(createTemplate(articleData));
-	        }
+	    res.status(500).send(err.toString());
+	} else {
+	    if (result.rows.length === 0) {
+		res.status(404).send('Article not found');
+	    } else{
+   	        var articleData = result.rows[0];
+		res.send(createTemplate(articleData));
 	    }
+	}
     });
 });
 
